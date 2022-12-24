@@ -1,27 +1,30 @@
-const Sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = require("../util/database");
 
-const sequelize = require('../util/database');
-
-const Product = sequelize.define('product', {
+//creating product model i.e the table schema columns
+const Product = sequelize.define("product", {
   id: {
-    type: Sequelize.INTEGER,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
   },
-  title: Sequelize.STRING,
-  price: {
-    type: Sequelize.DOUBLE,
-    allowNull: false
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   imageUrl: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  price: {
+    type: DataTypes.DOUBLE,
+    allowNull: false,
   },
   description: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
 });
 
 module.exports = Product;
