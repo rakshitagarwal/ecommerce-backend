@@ -95,9 +95,8 @@ window.addEventListener("DOMContentLoaded", () => {
             const productHtml = `
           <div>
           <h1>${product.title}</h1>
-          <img src=${product.imageUrl}></img>
-        
-        
+          <img src=${product.imageUrl} width="200" height="200"></img><br>
+          <button>Add To Cart</button><br>
           </div>`;
             parentSection.innerHTML = parentSection.innerHTML + productHtml;
           });
