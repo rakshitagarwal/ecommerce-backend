@@ -1,9 +1,8 @@
-//using sequelize
+const Sequelize = require('sequelize');
 
-const { Sequelize } = require("sequelize");
-const sequelize = new Sequelize("node-complete", "root", "password", {
-  host: "localhost",
-  dialect: "mysql",
-}); // creates a connnection pool to the DB in the back
+const sequelize = new Sequelize('backend', 'root', 'password', {
+  dialect: 'mysql',
+  host: 'localhost'
+});
 
 module.exports = sequelize;
